@@ -21,10 +21,10 @@
 
         public string FormatString()
         {
-            string outputString = string.Empty;
+            string sizeInfo = string.Empty;
             if (Size != SIZE_NOT_APPLICABLE)
-                outputString = string.Format("\"size\": \"{0}\", ", getSizeFor(Size));
-            return string.Format("{{\"code\": \"{0}\", \"color\": \"{1}\", {2}\"price\": {3}, \"currency\": \"{4}\"}}", Code, getColorFor(Color), outputString, Price, Currency);
+                sizeInfo = string.Format("\"size\": \"{0}\", ", getSizeFor(Size));
+            return string.Format("{{\"code\": \"{0}\", \"color\": \"{1}\", {2}\"price\": {3}, \"currency\": \"{4}\"}}", Code, getColorFor(Color), sizeInfo, Price, Currency);
         }
 
         private string getSizeFor(int num)
