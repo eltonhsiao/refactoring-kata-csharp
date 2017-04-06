@@ -31,5 +31,16 @@ namespace RefactoringKata
         {
             _products.Add(product);
         }
+
+        public string FormatString()
+        {
+            string outputString = string.Empty;
+            foreach (Product i in _products)
+            {
+                outputString += i.FormatString();
+            }
+
+            return string.Format("{{\"id\": {0}, \"products\": [{1}]}}, ", id, outputString);
+        }
     }
 }

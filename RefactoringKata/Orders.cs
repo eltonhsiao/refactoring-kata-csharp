@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace RefactoringKata
 {
@@ -19,6 +21,22 @@ namespace RefactoringKata
         public Order GetOrder(int i)
         {
             return _orders[i];
+        }
+
+        public string FormatString()
+        {
+            string outputString = string.Empty;
+            foreach (var i in _orders)
+            {
+                outputString += i.FormatString();
+            }
+
+            if (_orders.Count > 0)
+            {
+                outputString = outputString.Remove(outputString.Length - 2, 2);
+            }
+
+            return string.Format("{{\"orders\": [{0}]}}", string.Join(", ", outputString));
         }
     }
 }

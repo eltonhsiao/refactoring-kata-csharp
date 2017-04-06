@@ -18,5 +18,23 @@
             Price = price;
             Currency = currency;
         }
+
+        public string FormatString()
+        {
+            string outputString = string.Empty;
+            if (Size != SIZE_NOT_APPLICABLE)
+                outputString = string.Format("\"size\": \"{0}\", ", getSizeFor(Size));
+            return string.Format("{{\"code\": \"{0}\", \"color\": \"{1}\", {2}\"price\": {3}, \"currency\": \"{4}\"}}", Code, getColorFor(Color), outputString, Price, Currency);
+        }
+
+        private string getSizeFor(int num)
+        {
+            return ProdSize.getSizeName(num);
+        }
+
+        private string getColorFor(int num)
+        {
+            return ProdColor.getColorName(num);
+        }
     }
 }
