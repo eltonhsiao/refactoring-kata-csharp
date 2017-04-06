@@ -44,6 +44,8 @@
     <Compile Include="Order.cs" />
     <Compile Include="Orders.cs" />
     <Compile Include="OrdersWriter.cs" />
+    <Compile Include="ProdColor.cs" />
+    <Compile Include="ProdSize.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
